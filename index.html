@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title>Jay Wei - Personal Profile</title>
+    <style type='text/css'>
+        html {
+            overflow-x: initial !important;
+        }
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --select-text-bg-color: #B5D6FC;
+            --select-text-font-color: auto;
+            --monospace: "Lucida Console", Consolas, "Courier", monospace;
+            --title-bar-height: 20px;
+        }
+
+        html {
+            font-size: 16px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: auto;
+            inset: 0px;
+            font-size: 1rem;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: inherit;
+        }
+
+        #write {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 30px;
+            padding-bottom: 100px;
+            word-break: normal;
+            overflow-wrap: break-word;
+            position: relative;
+            white-space: normal;
+        }
+
+        @media only screen and (min-width: 1400px) {
+            #write {
+                max-width: 1024px;
+            }
+        }
+
+        @media only screen and (min-width: 1800px) {
+            #write {
+                max-width: 1200px;
+            }
+        }
+
+        a {
+            color: #4183C4;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            position: relative;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            line-height: 1.4;
+            cursor: text;
+            white-space: pre-wrap;
+        }
+
+        h1 {
+            font-size: 2.25em;
+            line-height: 1.2;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+            line-height: 1.225;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            line-height: 1.43;
+        }
+
+        h4 {
+            font-size: 1.25em;
+        }
+
+        h5 {
+            font-size: 1rem;
+        }
+
+        h6 {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        p,
+        blockquote,
+        ul,
+        ol,
+        dl,
+        table {
+            margin: 0.8em 0;
+        }
+
+        ul,
+        ol {
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 0px;
+            position: relative;
+        }
+
+        li p {
+            margin: 0.5rem 0px;
+        }
+
+        blockquote {
+            border-left: 4px solid #dfe2e5;
+            padding: 0 15px;
+            color: #777777;
+            margin: 1rem 0px;
+        }
+
+        blockquote> :first-child {
+            margin-top: 0px;
+        }
+
+        blockquote> :last-child {
+            margin-bottom: 0px;
+        }
+
+        hr {
+            height: 2px;
+            padding: 0;
+            margin: 16px 0;
+            background-color: #e7e7e7;
+            border: 0 none;
+            overflow: hidden;
+        }
+
+        /* Table styles */
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+            width: 100%;
+            overflow: auto;
+            text-align: left;
+            margin: 0.8em 0;
+        }
+
+        table tr {
+            border: 1px solid #dfe2e5;
+            margin: 0;
+            padding: 0;
+        }
+
+        table tr:nth-child(2n),
+        thead {
+            background-color: #f8f8f8;
+        }
+
+        table th {
+            font-weight: bold;
+            border: 1px solid #dfe2e5;
+            border-bottom: 0;
+            padding: 6px 13px;
+        }
+
+        table td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+
+        /* Code & Fences Styles */
+        .md-fences,
+        pre,
+        pre code,
+        code {
+            font-family: var(--monospace);
+            font-size: 0.9em;
+        }
+
+        code {
+            background-color: #ecf3ff !important;
+            color: #3b3b3b !important;
+            border-radius: 4px !important;
+            padding: 2px 4px;
+        }
+
+        .md-fences,
+        pre {
+            background-color: #ecf3ff !important;
+            color: #3b3b3b !important;
+            border: 1px solid #e7eaed;
+            border-radius: 8px !important;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* Jetbrains Dark syntax simulations inside theme */
+        .cm-comment {
+            color: #7A7E85 !important;
+        }
+
+        .cm-string {
+            color: #55a35f !important;
+        }
+
+        .cm-keyword {
+            color: #8430ce !important;
+        }
+
+        .cm-def {
+            color: #996900 !important;
+        }
+
+        .cm-number {
+            color: #2cabb8 !important;
+        }
+
+        /* Task list styling */
+        .md-task-list-item {
+            list-style-type: none;
+            position: relative;
+            padding-left: 0px;
+        }
+
+        .md-task-list-item>input {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin-left: -1.3em;
+            margin-top: calc(1em - 10px);
+            cursor: pointer;
+        }
+
+        /* Alert styles */
+        .md-alert {
+            padding: 0px 1em;
+            margin-bottom: 16px;
+            color: inherit;
+            border-left: 0.25em solid rgb(0, 0, 0);
+        }
+
+        .md-alert.md-alert-note {
+            border-left-color: rgb(9, 105, 218);
+        }
+
+        .md-alert.md-alert-tip {
+            border-left-color: rgb(31, 136, 61);
+        }
+
+        .md-alert-text {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .md-alert-text-note {
+            color: rgb(9, 105, 218);
+        }
+
+        .md-alert-text-tip {
+            color: rgb(31, 136, 61);
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body class='typora-export os-windows'>
+    <div class='typora-export-content'>
+        <div id='write' class=''>
+
+            <h1 id='jay-wei-profile'><span>Jay Wei (魏杰)</span></h1>
+            <blockquote>
+                <p><span>方向：计算机科学与技术 (Computer Science) | 软件工程 (Software Engineering)</span></p>
+                <p><span>GitHub: </span><a href='https://github.com/JayWei-git'
+                        target='_blank'><span>JayWei-git</span></a><span> | Email: </span><a
+                        href='mailto:jaywei0610@163.com'><span>jaywei0610@163.com</span></a></p>
+                <p><span>自我宣言：Stay hungry, stay foolish. 专注于高并发后端系统架构与计算机网络底层原理。</span></p>
+            </blockquote>
+
+            <h2 id='about-me'><span>关于我 / About Me</span></h2>
+            <p><span>你好！我是 <strong>Jay
+                        Wei</strong>，一名对技术充满热忱的计算机科学专业学生。我热衷于深入钻研计算机底层技术，尤其是计算机网络、分布式系统以及高性能架构设计。在日常学习中，我喜欢以“Top-Down”（自顶向下）的方式解构复杂的协议与框架，并将其沉淀为结构化的知识库。</span>
+            </p>
+
+            <div class="md-alert md-alert-note">
+                <div class="md-alert-text md-alert-text-note">💡 目前状态</div>
+                <p><span>正在积极寻找 2026/2027 届计算机视觉/后端开发/分布式系统方向的实习与研究机会！</span></p>
+            </div>
+
+            <hr />
+
+            <h2 id='skills-matrix'><span>技能矩阵 / Skills Matrix</span></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类 / Category</th>
+                        <th>熟练技术 / Technologies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>开发语言</strong></td>
+                        <td><code>Java</code>, <code>Go</code>, <code>C++</code>, <code>Python</code>, <code>SQL</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>网络与底层</strong></td>
+                        <td>TCP/IP 协议栈, Socket 编程, Wireshark 抓包分析, Linux 内核网络参数调优</td>
+                    </tr>
+                    <tr>
+                        <td><strong>数据结构与算法</strong></td>
+                        <td>熟练掌握常见数据结构、高级图论算法、动态规划，LeetCode 累计刷题 500+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>基础架构/中间件</strong></td>
+                        <td>MySQL (慢查询优化/索引调优), Redis (高可用架构), Kafka, Docker</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr />
+
+            <h2 id='projects'><span>项目经验 / Projects</span></h2>
+
+            <h3 id='project-1'><span>1. 高性能群聊与分布式网关系统</span></h3>
+            <ul>
+                <li>
+                    <p><span><strong>项目描述</strong>：基于 Netty 框架开发的高并发即时通讯系统，支持多端单聊、群聊及心跳检测机制。</span></p>
+                </li>
+                <li>
+                    <p><span><strong>核心工作</strong>：</span></p>
+                    <ul>
+                        <li>
+                            <p><span>设计自定义应用层通信协议，避免网络传输中的粘包、拆包问题。</span></p>
+                        </li>
+                        <li>
+                            <p><span>引入 Redis 缓存用户在线状态及路由路由表，利用分布式应用扩展系统吞吐量。</span></p>
+                        </li>
+                        <li>
+                            <p><span>基于 <code>一致性Hash算法</code> 实现了客户端连接在多台网关节点间的动态负载均衡。</span></p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 id='project-2'><span>2. 自研微型分布式键值存储 (Mini-KV)</span></h3>
+            <ul>
+                <li>
+                    <p><span><strong>项目描述</strong>：使用 Go 语言从零实现了一个基于 <code>Raft</code> 共识算法的分布式一致性 KV 存储系统。</span></p>
+                </li>
+                <li>
+                    <p><span><strong>核心亮点</strong>：</span></p>
+                    <ul>
+                        <li>
+                            <p><span>完美实现 Raft 论文中的 <code>Leader Election</code>、<code>Log Replication</code> 以及
+                                    <code>Safety</code> 校验。</span></p>
+                        </li>
+                        <li>
+                            <p><span>底层存储引擎采用 LSM-Tree (Log-Structured Merge-Tree) 架构，极大优化了随机写入性能。</span></p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr />
+
+            <h2 id='code-snapshot'><span>代码片段展示 / Code Snapshot</span></h2>
+            <p><span>以下是我在编写网络应用程序时，经常用于初始化高性能服务器的代码模版（符合 <code>jetbrains-dark</code> 语法配色风格）：</span></p>
+
+            <pre><code class="language-java"><span class="cm-comment">// 使用 Netty 构建高性能双模 Reactor 网络服务器架构</span>
+<span class="cm-keyword">public class</span> <span class="cm-def">NettyServerInitializer</span> {
+    <span class="cm-keyword">public void</span> <span class="cm-def">initServer</span>(<span class="cm-keyword">int</span> port) <span class="cm-keyword">throws</span> Exception {
+        EventLoopGroup bossGroup = <span class="cm-keyword">new</span> NioEventLoopGroup(<span class="cm-number">1</span>); <span class="cm-comment">// 负责接收连接</span>
+        EventLoopGroup workerGroup = <span class="cm-keyword">new</span> NioEventLoopGroup(); <span class="cm-comment">// 负责处理I/O事件</span>
+        <span class="cm-keyword">try</span> {
+            ServerBootstrap b = <span class="cm-keyword">new</span> ServerBootstrap();
+            b.group(bossGroup, workerGroup)
+             .channel(NioServerSocketChannel.class)
+             .childHandler(<span class="cm-keyword">new</span> ChannelInitializer&lt;SocketChannel&gt;() {
+                 <span class="cm-keyword">@Override</span>
+                 <span class="cm-keyword">protected void</span> <span class="cm-def">initChannel</span>(SocketChannel ch) {
+                     <span class="cm-comment">// 注入编解码器与业务处理器</span>
+                     ch.pipeline().addLast(<span class="cm-keyword">new</span> ProtocolDecoder());
+                     ch.pipeline().addLast(<span class="cm-keyword">new</span> ServerBusinessHandler());
+                 }
+             });
+            ChannelFuture f = b.bind(port).sync();
+            System.out.println(<span class="cm-string">"Server started beautifully on port: "</span> + port);
+            f.channel().closeFuture().sync();
+        } <span class="cm-keyword">finally</span> {
+            bossGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
+        }
+    }
+}</code></pre>
+
+            <hr />
+
+            <h2 id='todo-list'><span>近期研究与技术路线 / Future Plans</span></h2>
+            <ul class='md-task-list'>
+                <li class='md-task-list-item'><input type='checkbox' checked disabled /> <span>精读完成 <em>&quot;Computer
+                            Networking: A Top-Down Approach&quot;</em></span></li>
+                <li class='md-task-list-item'><input type='checkbox' checked disabled /> <span>基于 Raft 的分布式系统可用性混沌测试
+                        (Chaos Engineering)</span></li>
+                <li class='md-task-list-item'><input type='checkbox' disabled /> <span>深入学习 eBPF 技术在 Linux
+                        内核网络观测与加速中的应用</span></li>
+                <li class='md-task-list-item'><input type='checkbox' disabled /> <span>LeetCode 冲刺 800 题与高频面试算法精通</span>
+                </li>
+            </ul>
+
+            <div class="md-alert md-alert-tip">
+                <div class="md-alert-text md-alert-text-tip">🤝 期待与您联络</div>
+                <p><span>如果您对我的技术背景感兴趣，欢迎通过邮件 <a href='mailto:jaywei0610@163.com'>jaywei0610@163.com</a>
+                        随时与我建立联系。感谢阅读！</span></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
